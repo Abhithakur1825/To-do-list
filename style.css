@@ -1,0 +1,152 @@
+:root {
+  --bg-color: #f0f2f5;
+  --text-color: #333;
+  --primary-color: #6c63ff;
+  --task-bg: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+ 
+body.dark {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --task-bg: #1e1e1e;
+  --card-bg: rgba(30, 30, 30, 0.9);
+  --primary-color: #4e9bff;
+}
+ 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+ 
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #c3cfe2, #f5f7fa);
+}
+ 
+body.dark .app-wrapper {
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+}
+ 
+.todo-app {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--card-bg);
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px var(--shadow-color);
+  backdrop-filter: blur(10px);
+}
+ 
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: var(--primary-color);
+}
+ 
+/* Input + Add Button */
+.input-section {
+  display: flex;
+  margin-bottom: 20px;
+}
+ 
+input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+ 
+input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+ 
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  margin-left: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+ 
+button:hover {
+  background-color: #534bf1;
+}
+ 
+/* Filter Buttons */
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+ 
+.filters button {
+  flex: 1;
+  background-color: #e1e1e1;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+ 
+body.dark .filters button {
+  background-color: #333;
+  color: #eee;
+}
+ 
+.filters button:hover {
+  background-color: #ccc;
+}
+ 
+ul {
+  list-style: none;
+  padding: 0;
+}
+ 
+/* Task Item */
+li {
+  background-color: var(--task-bg);
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+ 
+.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+ 
+.task-actions i {
+  margin-left: 10px;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: transform 0.2s ease;
+}
+ 
+.task-actions i:hover {
+  transform: scale(1.2);
+}
